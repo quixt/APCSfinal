@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Noto+Sans&display=swap');
+
+:root {
+    --color-one:rgb(0, 181, 178);
+    --color-two:rgb(0, 147, 144);
+}
+body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+nav {
+    display:flex;
+    width:100vw;
+    height:10vh;
+    justify-content: center;
+
+}
+
+nav .navlink {
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 20%;
+    height:100%;
+    display:grid;
+    place-items: center;
+    cursor: pointer;
+
+}
+
+.navlink:hover {
+    background: linear-gradient(var(--color-one), var(--color-one)) white no-repeat 0 0;
+    background-size: 30% 100%;
+    animation: stripes .25s linear 1 forwards;
+}
+.navlink:hover a{
+    mix-blend-mode: multiply;
+  }
+
+nav .navlink a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0 1rem;
+    background-color:black;
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items: center;
+    font-family: "Noto Sans", sans-serif;
+
+    
+}
+
+@keyframes stripes {
+    to {
+      background-size:100% 100%;
+    }
+  }
