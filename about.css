@@ -1,0 +1,33 @@
+body {
+    background-image: url("LaserLarge.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.aboutMe {
+    height: 80vh;
+    width: 70vw;
+    margin: auto;
+    display: block;
+    margin-top: 10vh;
+    padding: 4em;
+    background-color: var(--grey-color-t);
+    border-radius: 2em;
+    overflow-y: scroll;
+}
+
+.aboutMe p {
+    font-size: 1.5em;
+    font-family: "Noto Sans Mono";
+    color: rgb(223, 223, 223);
+}
+
+.aboutMe img {
+    width: 40%;
+    height: 30vh;
+    display: block;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    object-fit: cover;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,64 @@
     <title>Joseph Tappen</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <nav>
-        <div class="navlink"><a href="index.html">Home</a></div>
-        <div class="navlink"><a href="aboutme.html">About Me</a></div>
-        <div class="navlink"><a href="aboutme.html">Resume</a></div>
-        <div class="navlink"><a href="aboutme.html">Portfolio</a></div>
-        <div class="navlink"><a href="aboutme.html">Contact Me</a></div>
-    </nav>
+
+    <div class="mainbg" src="./Lightning.jpg">
+        <nav>
+            <a href="/" t="/">
+                /
+            </a>
+            <a href="/about.html">About Me</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/resume.html">Resume</a>
+        </nav>
+        <div class="center">
+            <h1 id="n"></h1><span id="blinker">|</span>
+        </div>
+        <h3 class="simpleDesc"> </h3>
+        <div class="learnMore">Select a link to learn more</div>
+    </div>
+
 </body>
+<script>
+    const terminalText = "joseph tappen";
+    const content = document.getElementById("n");
+
+    function typeContent(index, el, text, time, callbackDict) {
+        if (index === text.length) {
+            if (callbackDict != undefined) {
+                callbackDict.cb(callbackDict.index, callbackDict.el, callbackDict.text, callbackDict.time);
+                console.log("callback called");
+            }
+
+        }
+        el.innerHTML = el.innerHTML + text.charAt(index);
+        setTimeout(typeContent, Math.random() * 10 + time, index + 1, el, text, time, callbackDict);
+    }
+    typeContent(0, content, terminalText, 200, {
+        cb: typeContent,
+        index: 0,
+        el: document.getElementsByClassName("simpleDesc")[0],
+        text: "Designer, Web Developer, Programmer, Musician, and more!",
+        time: 100
+    });
+    // typeContent(0, document.getElementsByClassName("simpleDesc")[0], "Designer, Web Developer, Programmer, Musician, and more!", 100);
+</script>
+<script>
+    const blinker = document.getElementById("blinker");
+
+    function blink(show) {
+        if (show) {
+            blinker.style.visibility = "hidden";
+            setTimeout(blink, 300, false);
+        } else {
+            blinker.style.visibility = "visible";
+            setTimeout(blink, 300, true);
+        }
+    }
+    blink(true);
+</script>
+
 </html>
